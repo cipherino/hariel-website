@@ -59,6 +59,7 @@ h1 {
     list-style-type: none;
     padding: 0;
     text-align: left;
+    counter-reset: manifesto-counter; /* Inizializza il contatore */
 }
 
 .manifesto li {
@@ -70,11 +71,12 @@ h1 {
     margin-bottom: 30px;
     padding-left: 25px; /* Spazio per il simbolo `#` */
     text-align: justify;
+    counter-increment: manifesto-counter; /* Aumenta il contatore */
 }
 
 /* Punto elenco personalizzato con `#` */
 .manifesto li::before {
-    content: "#"; /* Usa il simbolo `#` */
+    content: "#" counter(manifesto-counter); /* Usa il simbolo `#` */
     color: #ffffff;
     font-size: 1.4rem;
     position: absolute;
