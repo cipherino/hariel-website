@@ -68,7 +68,7 @@ h1 {
     line-height: 1.5;
     margin-bottom: 30px;
     padding-left: 55px; /* Distanza tra numero e testo */
-    text-align: justify;
+    text-align: left;
     counter-increment: manifesto-counter; /* Aumenta il contatore */
 }
 
