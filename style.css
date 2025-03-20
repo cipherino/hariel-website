@@ -1,7 +1,7 @@
 /* Importa il font per il titolo */
 @font-face {
     font-family: 'TitoloFont';
-    src: url('fonts/headlined.otf') format('opentype');
+    src: url('fonts/headlined.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -54,7 +54,6 @@ h1 {
 }
 
 /* Lista manifesto */
-/* Lista manifesto */
 .manifesto {
     list-style-type: none;
     padding: 0;
@@ -69,20 +68,20 @@ h1 {
     letter-spacing: 1.2px;
     line-height: 1.5;
     margin-bottom: 30px;
-    padding-left: 25px; /* Spazio per il simbolo `#` */
-    padding-right: 25px;
-    text-align: justify;
+    padding-left: 60px; /* Spazio per il simbolo `#` */
+    text-align: left;
     counter-increment: manifesto-counter; /* Aumenta il contatore */
 }
 
 /* Punto elenco personalizzato con `#` */
 .manifesto li::before {
-    content: "#" counter(manifesto-counter); /* Usa il simbolo `#` */
+    content: "#" counter(manifesto-counter); /* Aggiunge il numero con # */
     color: #ffffff;
     font-size: 1.4rem;
     position: absolute;
     left: 0px; /* Allinea il `#` vicino al testo */
     top: 0px; /* Allinea verticalmente al centro */
+    text-align: right;
 }
 
 /* Animazione di comparsa */
