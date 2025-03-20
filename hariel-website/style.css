@@ -16,30 +16,29 @@
 
 /* Reset di base */
 body {
-    margin: 40px;
-    padding: 50px;
+    margin: 20px; /* Ridotto per migliorare la compatibilità su mobile */
+    padding: 30px;
     background-color: #e41395; /* Cambia con il colore specifico */
     color: #ffffff; /* Testo bianco su sfondo scuro */
     font-family: 'ManifestoFont', sans-serif; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    display: block; /* Evita problemi di allineamento su mobile */
     text-align: center;
-    border: 15px solid black;
+    border: 10px solid black; /* Ridotto per evitare problemi su schermi piccoli */
 }
 
 /* Contenitore principale */
 .container {
-    max-width: 1500px;  /* Aumenta il valore per allargare la larghezza del contenuto */
-    padding: 40px; /* Aggiunge più spazio ai lati */
+    max-width: 1200px;  /* Ridotto per evitare overflow su mobile */
+    padding: 30px;
+    margin: 0 auto; /* Centra il contenuto */
 }
 
+/* Stile del logo */
 .logo {
-    width: 350px; /* Dimensione più grande */
-    max-width: 90%; /* Assicura che non esca fuori su mobile */
+    width: 280px; /* Adatta dimensione */
+    max-width: 80%;
     height: auto;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 /* Titolo */
@@ -47,38 +46,34 @@ h1 {
     font-family: 'TitoloFont', sans-serif; 
     letter-spacing: 1.8px; /* Spaziatura tra i caratteri */
     font-weight: bold;
-    font-size: 3.4rem; /* Aumenta la dimensione */
+    font-size: 3rem; /* Ridotto leggermente per migliore adattabilità */
     margin-bottom: 20px; /* Più spazio sotto */
-    line-height: 1.3; /* Migliora la leggibilità */
+    line-height: 1.3;
     padding: 10px;
-    margin-top: 0px; /* Rimuove margine superiore */
+    margin-top: 0px;
 }
 
 /* Lista manifesto */
 .manifesto {
-    list-style-type: none;
+    list-style-type: disc;
     padding: 0;
     text-align: left;
 }
 
 /* Stile dei punti */
 .manifesto li {
-    font-size: 1.5rem; /* Testo più grande */
-    padding-left: 35px; /* Spazio a sinistra per il punto */
+    font-size: 1.4rem; /* Leggermente più piccolo per migliore leggibilità */
     font-family: 'ManifestoFont', sans-serif;
-    line-height: 1.4; /* Aumenta lo spazio tra le righe */
-    letter-spacing: 1.5px;
-    margin: 10px 0;
+    letter-spacing: 1.2px;
+    line-height: 1.5; /* Più compatto tra le righe */
+    margin-bottom: 30px; /* Ridotto rispetto ai 40px precedenti */
+    padding-left: 30px; /* Mantenuto spazio per punti elenco */
     text-align: justify;
-    position: relative;
-    margin-bottom: 40px; /* Maggiore distanza tra un punto e l'altro */
-    /*text-indent: -20px;  Mantiene il punto fuori allineato */
-    padding-left: 40px; /* Indenta il testo dopo il punto */
 }
 
 /* Punto elenco personalizzato */
 .manifesto li::before {
-    content: "#";
+    content: "•"; /* Cambiato "#" in punto classico */
     color: #ffffff;
     font-size: 1.4rem;
     position: absolute;
@@ -100,23 +95,29 @@ h1 {
 /* 📱 Mobile: schermi più piccoli di 600px */
 @media screen and (max-width: 600px) {
     body {
-        padding: 10px; /* Aggiunge spazio ai lati per non incollare il testo ai bordi */
-        display: block; /* Impedisce all'elemento di essere troppo stretto */
+        padding: 10px;
+        margin: 10px;
+        border: 5px solid black; /* Ridotto per evitare problemi */
     }
 
     .container {
-        max-width: 90%; /* Fa in modo che il contenitore si adatti meglio agli schermi stretti */
+        max-width: 90%; /* Più flessibile per schermi stretti */
+        padding: 15px;
     }
 
     h1 {
-        font-size: 1.8rem; /* Riduce la dimensione del titolo */
+        font-size: 1.8rem; /* Più piccolo per mobile */
+        line-height: 1.2;
     }
 
-    li {
-        font-size: 1.1rem; /* Riduce leggermente la dimensione del testo dei punti */
+    .manifesto li {
+        font-size: 1.2rem; /* Ridotto per migliorare leggibilità su schermi piccoli */
+        margin-bottom: 20px; /* Meno spazio tra i punti su mobile */
+        padding-left: 20px; /* Indentazione minore */
     }
 
     .logo {
-        width: 150px; /* Riduce leggermente il logo su schermi piccoli */
+        width: 150px; /* Logo più piccolo su mobile */
+        margin-bottom: 30px;
     }
 }
