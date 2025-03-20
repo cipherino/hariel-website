@@ -45,7 +45,7 @@ body {
 h1 {
     font-family: 'TitoloFont', sans-serif; 
     letter-spacing: 1.8px; /* Spaziatura tra i caratteri */
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 3rem; /* Ridotto leggermente per migliore adattabilità */
     margin-bottom: 20px; /* Più spazio sotto */
     line-height: 1.3;
@@ -55,39 +55,54 @@ h1 {
 
 /* Lista manifesto */
 .manifesto {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-    counter-reset: manifesto-counter; /* Inizializza il contatore */
+    list-style-type: none; /* Rimuove i numeri di default */
+    padding-left: 0;
+    counter-reset: manifesto-counter -1; /* Parte da 0 */
 }
 
 .manifesto li {
-    position: relative; /* Necessario per allineare il punto */
+    position: relative;
     font-size: 1.4rem;
     font-family: 'ManifestoFont', sans-serif;
     letter-spacing: 1.2px;
     line-height: 1.5;
     margin-bottom: 30px;
-    padding-left: 60px; /* Spazio per il simbolo `#` */
-    text-align: left;
+    padding-left: 55px; /* Distanza tra numero e testo */
+    text-align: justify;
     counter-increment: manifesto-counter; /* Aumenta il contatore */
 }
 
-/* Punto elenco personalizzato con `#` */
+/* Aggiunge il numero con il simbolo # */
 .manifesto li::before {
     content: "#" counter(manifesto-counter); /* Aggiunge il numero con # */
     color: #ffffff;
     font-size: 1.4rem;
+    font-weight: bold;
     position: absolute;
-    left: 0px; /* Allinea il `#` vicino al testo */
-    top: 0px; /* Allinea verticalmente al centro */
-    text-align: right;
+    left: 0px;
+    top: 0px;
+    width: 45px; /* Distanza fissa per il numero */
+    text-align: right; /* Allinea il numero a destra */
 }
 
 /* Animazione di comparsa */
 .container {
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
+}
+
+/* Rende il logo cliccabile senza bordi extra */
+.logo {
+    display: block;
+    margin: 0 auto 20px; /* Centra il logo */
+    width: 250px; /* Adatta la dimensione */
+    max-width: 80%;
+    transition: transform 0.3s;
+}
+
+/* Effetto hover sul logo */
+.logo:hover {
+    transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -98,10 +113,15 @@ h1 {
 /* 📱 Mobile: schermi più piccoli di 600px */
 @media screen and (max-width: 600px) {
 
-        .manifesto li {
-        padding-left: 45px; /* Riduce il distanziamento su mobile */
-    } 
-    
+    .manifesto li {
+        padding-left: 40px; /* Riduce spazio tra numero e testo */
+    }
+
+    .manifesto li::before {
+        width: 30px; /* Riduce la larghezza del numero su mobile */
+        font-size: 1.2rem; /* Riduce la dimensione del numero */
+    }
+
     body {
         padding: 10px;
         margin: 10px;
@@ -116,11 +136,6 @@ h1 {
     h1 {
         font-size: 1.8rem; /* Più piccolo per mobile */
         line-height: 1.2;
-    }
-
-    .manifesto li::before {
-        width: 35px; /* Riduce la larghezza per evitare sovrapposizione */
-        font-size: 1.2rem; /* Riduce la dimensione del numero su mobile */
     }
 
     .logo {
