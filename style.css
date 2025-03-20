@@ -97,6 +97,11 @@ h1 {
 
 /* 📱 Mobile: schermi più piccoli di 600px */
 @media screen and (max-width: 600px) {
+
+        .manifesto li {
+        padding-left: 45px; /* Riduce il distanziamento su mobile */
+    } 
+    
     body {
         padding: 10px;
         margin: 10px;
@@ -113,10 +118,9 @@ h1 {
         line-height: 1.2;
     }
 
-    .manifesto li {
-        font-size: 1.2rem; /* Ridotto per migliorare leggibilità su schermi piccoli */
-        margin-bottom: 20px; /* Meno spazio tra i punti su mobile */
-        padding-left: 20px; /* Indentazione minore */
+    .manifesto li::before {
+        width: 35px; /* Riduce la larghezza per evitare sovrapposizione */
+        font-size: 1.2rem; /* Riduce la dimensione del numero su mobile */
     }
 
     .logo {
