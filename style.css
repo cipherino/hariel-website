@@ -54,31 +54,32 @@ h1 {
 }
 
 /* Lista manifesto */
+/* Lista manifesto */
 .manifesto {
-    list-style-type: disc;
+    list-style-type: none;
     padding: 0;
     text-align: left;
 }
 
-/* Stile dei punti */
 .manifesto li {
-    font-size: 1.4rem; /* Leggermente più piccolo per migliore leggibilità */
+    position: relative; /* Necessario per allineare il punto */
+    font-size: 1.4rem;
     font-family: 'ManifestoFont', sans-serif;
     letter-spacing: 1.2px;
-    line-height: 1.5; /* Più compatto tra le righe */
-    margin-bottom: 30px; /* Ridotto rispetto ai 40px precedenti */
-    padding-left: 30px; /* Mantenuto spazio per punti elenco */
+    line-height: 1.5;
+    margin-bottom: 30px;
+    padding-left: 25px; /* Spazio per il simbolo `#` */
     text-align: justify;
 }
 
-/* Punto elenco personalizzato */
+/* Punto elenco personalizzato con `#` */
 .manifesto li::before {
-    content: "#"; /* Cambiato "#" in punto classico */
+    content: "#"; /* Usa il simbolo `#` */
     color: #ffffff;
     font-size: 1.4rem;
     position: absolute;
-    left: 0;
-    top: 5px;
+    left: 0px; /* Allinea il `#` vicino al testo */
+    top: 0px; /* Allinea verticalmente al centro */
 }
 
 /* Animazione di comparsa */
