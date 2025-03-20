@@ -70,6 +70,7 @@ h1 {
     line-height: 1.5;
     margin-bottom: 30px;
     padding-left: 25px; /* Spazio per il simbolo `#` */
+    padding-right: 25px;
     text-align: justify;
     counter-increment: manifesto-counter; /* Aumenta il contatore */
 }
