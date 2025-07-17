@@ -105,6 +105,31 @@ h1 {
     transform: scale(1.05);
 }
 
+.language-switch {
+    position: fixed;
+    top: 70px;
+    right: 70px;
+    z-index: 1000;
+}
+
+.language-button {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.language-button:hover {
+    background-color: #e41395;  /* Colore di sfondo personalizzato */
+    color: white;
+}
+
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -142,4 +167,41 @@ h1 {
         width: 150px; /* Logo più piccolo su mobile */
         margin-bottom: 30px;
     }
+
+    .language-button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+  }
+
+    .language-switch {
+        top: 25px;
+        right: 25px;
+  }
+
+.ig-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 28px;
+  height: 28px;
+}
+
+.ig-icon img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* se l’SVG è nero e vuoi renderlo bianco */
+}
+
+.ig-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: white; /* rende l'icona bianca */
+  transition: transform 0.2s ease-in-out;
+}
+
+.ig-icon:hover svg {
+  transform: scale(1.1);
+}
 }
